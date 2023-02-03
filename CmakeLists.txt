@@ -1,0 +1,27 @@
+cmake_minimum_required(VERSION 3.23.2)
+
+set(CMAKE_GENERATOR "MinGW Makefiles" CACHE INTERNAL "" FORCE)
+set(CMAKE_C_COMPILER "gcc")
+set(CMAKE_CXX_COMPILER "g++")
+
+#I need make for this to work
+project(WordSearch)
+
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_POSITION_INDEPENDENT_CODE ON)
+
+add_subdirectory(Utils)
+add_subdirectory(WordBoard)
+
+include_directories(
+    "Utils/incl"
+    "WordBoard/incl"
+)
+
+add_executable(WordSearch  main.cpp)
+
+target_link_libraries(
+    WordSearch
+    Utils
+    WordBoard
+)
