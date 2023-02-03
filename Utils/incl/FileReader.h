@@ -5,12 +5,12 @@ class FileReader
 {
     public:
 
-    FileReader(){};
+        FileReader(){};
 
-    std::vector<std::string> read(std::string pathToFile);
+        std::vector<std::string> read(std::string pathToFile);
 
     private:
 
-    virtual bool correctFormat(std::string& line);
+        virtual bool correctFormat(std::string& line);
 
 };
